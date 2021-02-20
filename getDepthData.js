@@ -1,6 +1,6 @@
 /* 
   Function to get child property by an object, following a path.
-  @params path Data.user.profile.name with this path we get "Jhony" the name value.
+  @params path data.user.profile.name with this path we get "Jhony" the name value.
   @params obj:
   data: {
     messages: ["string"],
