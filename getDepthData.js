@@ -1,6 +1,6 @@
 /* 
   Function to get child property by an object, following a path.
-  @params path data.user.profile.name with this path we get "Jhony" the name value.
+  @params path Data.user.profile.name with this path we get "Jhony" the name value.
   @params obj:
   data: {
     messages: ["string"],
@@ -8,19 +8,19 @@
       profile: {
         _id: "string",
         name: "Jhony",
-        surname: "string
+        surname: "string"
       }
     }
   }
   @return The value of the last property specified in the path. In this case "name"
 */
 const getDepthData = (path, obj) => {
-    let { Data: objData } = obj
-    const [, ...keyList] = path.split('.')
+    const [firstKey, ...keyList] = path.split('.');
+    let { [firstKey]: objData } = obj;
     for (let key of keyList) {
         if (objData[key] !== undefined) {
-            objData = objData[key]
+            objData = objData[key];
         }
     }
-    return objData
+    return objData;
 }
